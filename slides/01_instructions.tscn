@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs4jy0sb736ub"]
+
+[ext_resource type="Script" path="res://slides/01_instructions.gd" id="1_at1a4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lu85"]
+font_size = 32
+
+[node name="instructions" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_at1a4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Use the left and right arrow keys to change slides.
+Press TAB to switch between the slideshow and 3D scene.
+The camera is controlled with WASD and the mouse."
+label_settings = SubResource("LabelSettings_1lu85")
+horizontal_alignment = 1

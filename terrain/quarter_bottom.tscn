@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddbji6od68ol5"]
+
+[ext_resource type="Script" path="res://terrain/quarter_bottom.gd" id="1_drhjp"]
+
+[node name="quarter_bottom" type="Node3D"]
+script = ExtResource("1_drhjp")
+px_socket = "plain_low|plain_low"
+nx_socket = "air|air"
+py_socket = "air|air"
+ny_socket = "ramp|ramp|cy"
+pz_socket = "R_quarter|L_quarter"
+nz_socket = "L_quarter|R_quarter"

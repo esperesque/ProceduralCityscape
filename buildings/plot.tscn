@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dio1qil2oerhh"]
+
+[ext_resource type="Script" path="res://buildings/plot.gd" id="1_5arem"]
+
+[node name="plot" type="Node3D"]
+script = ExtResource("1_5arem")

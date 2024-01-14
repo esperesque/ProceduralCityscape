@@ -1,0 +1,15 @@
+[gd_scene load_steps=10 format=3 uid="uid://kmjc4t64ntcx"]
+
+[ext_resource type="Script" path="res://buildings/house.gd" id="1_gsrs4"]
+[ext_resource type="Material" uid="uid://c757q5yiurcaj" path="res://material/house_beige.tres" id="2_lgdg8"]
+[ext_resource type="Material" uid="uid://blqafb5gqciqj" path="res://material/house_blue.tres" id="3_exu6q"]
+[ext_resource type="Material" uid="uid://cl8bt3esuxqim" path="res://material/house_red.tres" id="4_5vxxy"]
+[ext_resource type="Material" uid="uid://cy8k27kktmpwd" path="res://material/house_green.tres" id="5_k50gr"]
+[ext_resource type="Material" uid="uid://cxq6auiujlf6e" path="res://material/house_yellow.tres" id="6_qg642"]
+[ext_resource type="Material" uid="uid://eqyxwcl6va4u" path="res://material/house_gray.tres" id="7_wlvms"]
+[ext_resource type="Material" uid="uid://bt34gg1fatbg4" path="res://material/house_lavender.tres" id="8_cuyek"]
+[ext_resource type="Material" uid="uid://b5djcmyyus7cu" path="res://material/house_wood.tres" id="9_5txn5"]
+
+[node name="house" type="Node3D"]
+script = ExtResource("1_gsrs4")
+materials = Array[Material]([ExtResource("2_lgdg8"), ExtResource("3_exu6q"), ExtResource("4_5vxxy"), ExtResource("5_k50gr"), ExtResource("6_qg642"), ExtResource("7_wlvms"), ExtResource("8_cuyek"), ExtResource("9_5txn5")])

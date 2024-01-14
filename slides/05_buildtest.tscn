@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckdku4jeuairk"]
+
+[ext_resource type="Script" path="res://slides/05_buildtest.gd" id="1_gc338"]
+[ext_resource type="Script" path="res://slides/build_step_button.gd" id="2_t7enw"]
+[ext_resource type="PackedScene" uid="uid://mkk44jvvin7d" path="res://building_test.tscn" id="3_uiyad"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lu85"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_ffuj4"]
+line_spacing = 24.0
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rnae"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0627451, 0.12549, 0.25098, 1)
+
+[node name="03_3d" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gc338")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Building generation - step by step"
+label_settings = SubResource("LabelSettings_1lu85")
+horizontal_alignment = 1
+
+[node name="pad" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="bulletpoints" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 11
+
+[node name="step0" type="Label" parent="HBoxContainer/bulletpoints"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0: Empty plot"
+label_settings = SubResource("LabelSettings_ffuj4")
+
+[node name="step1" type="Label" parent="HBoxContainer/bulletpoints"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1: Draw rectangle"
+label_settings = SubResource("LabelSettings_ffuj4")
+
+[node name="step2" type="Label" parent="HBoxContainer/bulletpoints"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "2: Adjust corners"
+label_settings = SubResource("LabelSettings_ffuj4")
+
+[node name="step3" type="Label" parent="HBoxContainer/bulletpoints"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3: Draw walls"
+label_settings = SubResource("LabelSettings_ffuj4")
+
+[node name="step4" type="Label" parent="HBoxContainer/bulletpoints"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "4: Generate extrusions"
+label_settings = SubResource("LabelSettings_ffuj4")
+
+[node name="step5" type="Label" parent="HBoxContainer/bulletpoints"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5: Draw roof"
+label_settings = SubResource("LabelSettings_ffuj4")
+
+[node name="build_step_button" type="Button" parent="HBoxContainer/bulletpoints"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Next build step"
+script = ExtResource("2_t7enw")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(574, 533)
+render_target_update_mode = 4
+
+[node name="building_test" parent="HBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_uiyad")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer/SubViewport"]
+
+[node name="Panel" type="Panel" parent="HBoxContainer/SubViewportContainer/SubViewport/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6rnae")
+
+[connection signal="pressed" from="HBoxContainer/bulletpoints/build_step_button" to="HBoxContainer/bulletpoints/build_step_button" method="_on_pressed"]

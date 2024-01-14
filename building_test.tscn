@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://mkk44jvvin7d"]
+
+[ext_resource type="Script" path="res://building_test.gd" id="1_jm4xr"]
+[ext_resource type="Script" path="res://free_camera.gd" id="1_wfwlf"]
+
+[sub_resource type="Environment" id="Environment_krlbk"]
+
+[node name="building_test" type="Node3D"]
+script = ExtResource("1_jm4xr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_krlbk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.688279, 0.725446, 0, -0.725446, 0.688279, 0, 4.43032, 3.89397)
+
+[node name="FreeLookCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984856, 0.173373, 0, -0.173373, 0.984856, 0, 10, 15)
+script = ExtResource("1_wfwlf")

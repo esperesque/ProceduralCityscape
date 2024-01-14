@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf8m75o32bljx"]
+
+[ext_resource type="Script" path="res://slides/10_final.gd" id="1_ydgii"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lu85"]
+font_size = 48
+
+[node name="10_final" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ydgii")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Questions?"
+label_settings = SubResource("LabelSettings_1lu85")
+horizontal_alignment = 1

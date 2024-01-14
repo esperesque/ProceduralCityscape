@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfaf2i3gdsi88"]
+
+[ext_resource type="Script" path="res://terrain/TerrainBlock.gd" id="1_w8mkr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ylfr"]
+albedo_color = Color(1, 1, 0.0588235, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vfdfi"]
+material = SubResource("StandardMaterial3D_1ylfr")
+
+[node name="Air" type="Node3D"]
+script = ExtResource("1_w8mkr")
+px_socket = "air|air"
+nx_socket = "air|air"
+py_socket = "air|air"
+ny_socket = "air|air"
+pz_socket = "air|air"
+nz_socket = "air|air"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_vfdfi")

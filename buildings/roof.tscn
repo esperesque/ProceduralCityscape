@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnk7f5lht6jki"]
+
+[ext_resource type="Script" path="res://buildings/roof.gd" id="1_vt2hi"]
+
+[node name="roof" type="Node3D"]
+script = ExtResource("1_vt2hi")

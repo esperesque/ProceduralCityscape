@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://vf060gkxwn2l"]
+
+[ext_resource type="Script" path="res://terrain/bottom.gd" id="1_nbran"]
+
+[node name="bottom" type="Node3D"]
+script = ExtResource("1_nbran")
+px_socket = "plain_bot|plain_bot"
+nx_socket = "plain_bot|plain_bot"
+py_socket = "air|air"
+ny_socket = "ground|ground"
+pz_socket = "plain_bot|plain_bot"
+nz_socket = "plain_bot|plain_bot"

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://br858mfxg2od5"]
+
+[ext_resource type="Script" path="res://buildings/window.gd" id="1_23a1r"]
+
+[node name="window" type="Node3D"]
+script = ExtResource("1_23a1r")
+
+[node name="light" type="OmniLight3D" parent="."]
+light_color = Color(0.87451, 0.870588, 0, 1)
+light_energy = 0.5
+light_size = 1.5
+omni_range = 25.0
+omni_attenuation = 0.637281

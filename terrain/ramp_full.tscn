@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://n8ysb2f4ip7a"]
+
+[ext_resource type="Script" path="res://terrain/ramp_full.gd" id="1_wugyt"]
+
+[node name="ramp_full" type="Node3D"]
+script = ExtResource("1_wugyt")
+px_socket = "ground|ground"
+nx_socket = "plain_bot|plain_bot"
+py_socket = "ramp|ramp|cy"
+ny_socket = "ground|ground"
+pz_socket = "R_fullramp|L_fullramp"
+nz_socket = "L_fullramp|R_fullramp"

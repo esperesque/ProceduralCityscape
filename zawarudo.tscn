@@ -1,0 +1,230 @@
+[gd_scene load_steps=23 format=3 uid="uid://c77f66x7fkqkc"]
+
+[ext_resource type="Script" path="res://zawarudo.gd" id="1_dxy1u"]
+[ext_resource type="Script" path="res://free_camera.gd" id="2_emaep"]
+[ext_resource type="PackedScene" uid="uid://dfaf2i3gdsi88" path="res://terrain/air.tscn" id="2_iqhhf"]
+[ext_resource type="PackedScene" uid="uid://coaifmsvi8wxb" path="res://terrain/flat.tscn" id="3_4oxci"]
+[ext_resource type="PackedScene" uid="uid://d0tqu3ansc2rv" path="res://terrain/flat_curve.tscn" id="4_0wcfx"]
+[ext_resource type="PackedScene" uid="uid://bq61fibdlfhvc" path="res://terrain/flat_intersection.tscn" id="5_7seyc"]
+[ext_resource type="PackedScene" uid="uid://e5siycyks7v1" path="res://terrain/flat_road.tscn" id="5_l1iar"]
+[ext_resource type="PackedScene" uid="uid://coj04sp0cp44l" path="res://terrain/ramp.tscn" id="7_36ob5"]
+[ext_resource type="PackedScene" uid="uid://bqii8vhsg7mhy" path="res://terrain/flat_t.tscn" id="8_p1jyj"]
+[ext_resource type="PackedScene" uid="uid://wgrosbke3ypo" path="res://terrain/ground.tscn" id="8_sfol6"]
+[ext_resource type="PackedScene" uid="uid://vf060gkxwn2l" path="res://terrain/bottom.tscn" id="9_ciovv"]
+[ext_resource type="PackedScene" uid="uid://jwehap8xvynl" path="res://terrain/ravine_full.tscn" id="9_kbrw8"]
+[ext_resource type="PackedScene" uid="uid://dr5r0xhncdgww" path="res://terrain/ravine.tscn" id="10_5gdav"]
+[ext_resource type="PackedScene" uid="uid://b5qjlpclxsy37" path="res://terrain/ravine_bridge.tscn" id="11_0kbl5"]
+[ext_resource type="PackedScene" uid="uid://ddbji6od68ol5" path="res://terrain/quarter_bottom.tscn" id="14_5g63d"]
+[ext_resource type="PackedScene" uid="uid://dkl81vd8skmib" path="res://terrain/quarter_ramp.tscn" id="15_begp6"]
+[ext_resource type="PackedScene" uid="uid://n8ysb2f4ip7a" path="res://terrain/ramp_full.tscn" id="16_ubdfb"]
+[ext_resource type="Script" path="res://floor_spin.gd" id="17_6s0ks"]
+[ext_resource type="Script" path="res://dense_spin.gd" id="18_wi42k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o4k54"]
+
+[sub_resource type="Sky" id="Sky_x57nl"]
+sky_material = SubResource("ProceduralSkyMaterial_o4k54")
+
+[sub_resource type="Environment" id="Environment_chj4h"]
+sky = SubResource("Sky_x57nl")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 3.47
+
+[node name="zawarudo" type="Node3D"]
+script = ExtResource("1_dxy1u")
+terrain_blocks = Array[PackedScene]([ExtResource("3_4oxci"), ExtResource("4_0wcfx"), ExtResource("5_l1iar"), ExtResource("5_7seyc"), ExtResource("2_iqhhf"), ExtResource("8_sfol6"), ExtResource("8_p1jyj"), ExtResource("9_kbrw8"), ExtResource("10_5gdav"), ExtResource("11_0kbl5"), ExtResource("7_36ob5"), ExtResource("9_ciovv"), ExtResource("14_5g63d"), ExtResource("15_begp6"), ExtResource("16_ubdfb")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_chj4h")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.32602, 9.13078)
+visible = false
+omni_range = 100.0
+
+[node name="free_camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.80288, 0.596141, 0, -0.596141, 0.80288, 0.0198567, 4.6098, 7.91175)
+script = ExtResource("2_emaep")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="free_camera"]
+
+[node name="terrain" type="Node3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="hbox" type="HBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mc" type="MarginContainer" parent="CanvasLayer/UI/hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="vbox" type="VBoxContainer" parent="CanvasLayer/UI/hbox/mc"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UI/hbox/mc/vbox"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="mc" type="MarginContainer" parent="CanvasLayer/UI/hbox/mc/vbox/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="vbox" type="VBoxContainer" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+text = "Map size"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer"]
+layout_mode = 2
+text = "X: "
+
+[node name="spin_x" type="SpinBox" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 20.0
+value = 4.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer2"]
+layout_mode = 2
+text = "Y: "
+
+[node name="spin_y" type="SpinBox" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer2"]
+layout_mode = 2
+min_value = 1.0
+max_value = 20.0
+value = 3.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer3"]
+layout_mode = 2
+text = "Z: "
+
+[node name="spin_z" type="SpinBox" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer3"]
+layout_mode = 2
+min_value = 1.0
+max_value = 20.0
+value = 4.0
+
+[node name="lasdd" type="Label" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+text = "Generator settings"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer4"]
+layout_mode = 2
+text = "Max floors: "
+
+[node name="floor_spin" type="SpinBox" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 10
+min_value = 1.0
+max_value = 20.0
+value = 5.0
+script = ExtResource("17_6s0ks")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer5"]
+layout_mode = 2
+text = "Building density"
+
+[node name="dense_spin" type="SpinBox" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 10
+min_value = 50.0
+value = 100.0
+suffix = "%"
+script = ExtResource("18_wi42k")
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+text = "View settings"
+
+[node name="check_plots" type="CheckBox" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+button_pressed = true
+text = "Show plots"
+
+[node name="check_buildings" type="CheckBox" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+button_pressed = true
+text = "Show buildings"
+
+[node name="check_gradient" type="CheckBox" parent="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox"]
+layout_mode = 2
+text = "UV debug gradient"
+
+[node name="space" type="Control" parent="CanvasLayer/UI/hbox/mc/vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/hbox/mc/vbox"]
+layout_mode = 2
+
+[node name="generate" type="Button" parent="CanvasLayer/UI/hbox/mc/vbox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Generate"
+
+[node name="clear" type="Button" parent="CanvasLayer/UI/hbox/mc/vbox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear"
+
+[node name="space" type="Control" parent="CanvasLayer/UI/hbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[connection signal="value_changed" from="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer/spin_x" to="." method="_on_spin_x_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer2/spin_y" to="." method="_on_spin_y_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer3/spin_z" to="." method="_on_spin_z_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer4/floor_spin" to="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer4/floor_spin" method="_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer5/dense_spin" to="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/HBoxContainer5/dense_spin" method="_on_value_changed"]
+[connection signal="toggled" from="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/check_plots" to="." method="_on_check_plots_toggled"]
+[connection signal="toggled" from="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/check_buildings" to="." method="_on_check_buildings_toggled"]
+[connection signal="toggled" from="CanvasLayer/UI/hbox/mc/vbox/Panel/mc/vbox/check_gradient" to="." method="_on_check_gradient_toggled"]
+[connection signal="pressed" from="CanvasLayer/UI/hbox/mc/vbox/HBoxContainer/generate" to="." method="_on_generate_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/hbox/mc/vbox/HBoxContainer/clear" to="." method="_on_clear_pressed"]

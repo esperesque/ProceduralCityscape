@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TerrainTile" load_steps=3 format=3 uid="uid://vm1dl6nvxnrb"]
+
+[ext_resource type="Script" path="res://wfc_tiles/TerrainTile.gd" id="1_wpjay"]
+[ext_resource type="Texture2D" uid="uid://dguh26r6q5xft" path="res://wfc_tiles/road_turn3.png" id="2_7n51r"]
+
+[resource]
+script = ExtResource("1_wpjay")
+tex = ExtResource("2_7n51r")
+px_socket = "road"
+nx_socket = "grass"
+py_socket = "grass"
+ny_socket = "road"

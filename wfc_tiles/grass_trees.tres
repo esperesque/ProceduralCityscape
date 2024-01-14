@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TerrainTile" load_steps=3 format=3 uid="uid://cb330hb5ke48q"]
+
+[ext_resource type="Script" path="res://wfc_tiles/TerrainTile.gd" id="1_uidxh"]
+[ext_resource type="Texture2D" uid="uid://c1btbpfxfos0j" path="res://wfc_tiles/grass_trees.png" id="2_qub0u"]
+
+[resource]
+script = ExtResource("1_uidxh")
+tex = ExtResource("2_qub0u")
+px_socket = "grass"
+nx_socket = "grass"
+py_socket = "grass"
+ny_socket = "grass"

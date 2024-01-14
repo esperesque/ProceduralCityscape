@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce8t3jo0un4iy"]
+
+[ext_resource type="Script" path="res://slides/03_implementation.gd" id="1_jebys"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lu85"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_ffuj4"]
+line_spacing = 24.0
+font_size = 32
+
+[node name="03_imp" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jebys")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Implementation"
+label_settings = SubResource("LabelSettings_1lu85")
+horizontal_alignment = 1
+
+[node name="pad" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="padding" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="bulletpoints" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="bp" type="Label" parent="HBoxContainer/bulletpoints"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "• Godot provides classes for primitives such as boxes, planes, quads...
+• ...these were not used! Everything is triangle tables
+• No models or textures in the project - it's all vector math
+• All lighting is handled by Godot"
+label_settings = SubResource("LabelSettings_ffuj4")

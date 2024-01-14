@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TerrainTile" load_steps=3 format=3 uid="uid://2ag5yekkw3e2"]
+
+[ext_resource type="Script" path="res://wfc_tiles/TerrainTile.gd" id="1_aqca4"]
+[ext_resource type="Texture2D" uid="uid://1ylfka20qxts" path="res://wfc_tiles/ocean_corner1.png" id="2_4f0tg"]
+
+[resource]
+script = ExtResource("1_aqca4")
+tex = ExtResource("2_4f0tg")
+px_socket = "shore_t"
+nx_socket = "ocean"
+py_socket = "ocean"
+ny_socket = "shore_r"

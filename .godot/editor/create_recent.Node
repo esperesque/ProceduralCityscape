@@ -1,0 +1,14 @@
+MeshInstance3D
+CheckBox
+SpinBox
+HBoxContainer
+CenterContainer
+Control
+TextureRect
+Button
+FreeLookCamera
+Camera3D
+DirectionalLight3D
+WorldEnvironment
+OmniLight3D
+SpotLight3D

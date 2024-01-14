@@ -1,0 +1,127 @@
+[gd_scene load_steps=38 format=3 uid="uid://bkj5xvl7d1015"]
+
+[ext_resource type="Script" path="res://slides/07_wfc_demo.gd" id="1_pt451"]
+[ext_resource type="Resource" uid="uid://cu4bv058rnasc" path="res://wfc_tiles/grass.tres" id="2_0saun"]
+[ext_resource type="Resource" uid="uid://cb330hb5ke48q" path="res://wfc_tiles/grass_trees.tres" id="3_y4f3j"]
+[ext_resource type="Resource" uid="uid://b7i31csjvw5os" path="res://wfc_tiles/road_horiz.tres" id="4_7eggw"]
+[ext_resource type="Resource" uid="uid://ccnuimeqysnu4" path="res://wfc_tiles/road_vert.tres" id="5_ks5hj"]
+[ext_resource type="Resource" uid="uid://cv5i372ychoqm" path="res://wfc_tiles/road_inter.tres" id="6_hadk5"]
+[ext_resource type="Resource" uid="uid://c336m5q7f13js" path="res://wfc_tiles/road_tdown.tres" id="7_6buxg"]
+[ext_resource type="Resource" uid="uid://cvhf5edsorxhr" path="res://wfc_tiles/road_houses.tres" id="8_7d5re"]
+[ext_resource type="Resource" uid="uid://ddkgx24sjt6lf" path="res://wfc_tiles/river_ver.tres" id="9_7yila"]
+[ext_resource type="Resource" uid="uid://bydhjm04yi410" path="res://wfc_tiles/river_bridge.tres" id="10_j0qfb"]
+[ext_resource type="Resource" uid="uid://xemi5r7ium1c" path="res://wfc_tiles/river_north_east.tres" id="11_koxu0"]
+[ext_resource type="Resource" uid="uid://c46fe32i4mquw" path="res://wfc_tiles/river_south_west.tres" id="12_nii0y"]
+[ext_resource type="Resource" uid="uid://cltdxx6v5c2jx" path="res://wfc_tiles/river_horiz.tres" id="13_0l5na"]
+[ext_resource type="Resource" uid="uid://b3cajgn1p2xp6" path="res://wfc_tiles/ocean.tres" id="14_b6ha4"]
+[ext_resource type="Resource" uid="uid://8qjouaedm4vt" path="res://wfc_tiles/shore_b.tres" id="15_t5hxr"]
+[ext_resource type="Resource" uid="uid://c8xc78d7nr4o3" path="res://wfc_tiles/shore_t.tres" id="16_yett2"]
+[ext_resource type="Resource" uid="uid://bf42prtxcgmjt" path="res://wfc_tiles/shore_r.tres" id="17_3r4ia"]
+[ext_resource type="Resource" uid="uid://dkx5i1ljryec2" path="res://wfc_tiles/shore_l.tres" id="18_smk2k"]
+[ext_resource type="Resource" uid="uid://jgn4fwnincmu" path="res://wfc_tiles/shore_tr.tres" id="19_vkg6n"]
+[ext_resource type="Resource" uid="uid://cuwqx13f1a6a8" path="res://wfc_tiles/shore_tl.tres" id="20_tipd4"]
+[ext_resource type="Resource" uid="uid://cu036d2tolxed" path="res://wfc_tiles/shore_bl.tres" id="21_pfoie"]
+[ext_resource type="Resource" uid="uid://b8snrq60wvy8t" path="res://wfc_tiles/shore_br.tres" id="22_qdsg0"]
+[ext_resource type="Resource" uid="uid://cdoj7cjqkqvsy" path="res://wfc_tiles/mountain_tunnel.tres" id="23_4naws"]
+[ext_resource type="Resource" uid="uid://cnv118evjnkqw" path="res://wfc_tiles/mountain_deadend.tres" id="24_8ygnq"]
+[ext_resource type="Resource" uid="uid://bqaj5h33f6mub" path="res://wfc_tiles/mountain.tres" id="25_ml4lu"]
+[ext_resource type="Resource" uid="uid://2ag5yekkw3e2" path="res://wfc_tiles/ocean_c1.tres" id="26_1mswo"]
+[ext_resource type="Resource" uid="uid://bnh5uqmxl3alv" path="res://wfc_tiles/ocean_c2.tres" id="27_e7hma"]
+[ext_resource type="Resource" uid="uid://w7ae34e8osna" path="res://wfc_tiles/ocean_c3.tres" id="28_3chqe"]
+[ext_resource type="Resource" uid="uid://b3o85lv2sxfbp" path="res://wfc_tiles/ocean_c4.tres" id="29_m61w0"]
+[ext_resource type="Resource" uid="uid://d1q2rh4vrn058" path="res://wfc_tiles/bridge.tres" id="30_a8eli"]
+[ext_resource type="Resource" uid="uid://biuph767pn8yi" path="res://wfc_tiles/bridge_l.tres" id="31_sg5vl"]
+[ext_resource type="Resource" uid="uid://vibte273pxll" path="res://wfc_tiles/bridge_r.tres" id="32_bcre6"]
+[ext_resource type="Resource" uid="uid://cm7vur1vw5b28" path="res://wfc_tiles/road_turn1.tres" id="33_nxhgm"]
+[ext_resource type="Resource" uid="uid://d1su1clmy1kjh" path="res://wfc_tiles/road_turn2.tres" id="34_cidli"]
+[ext_resource type="Resource" uid="uid://vm1dl6nvxnrb" path="res://wfc_tiles/road_turn3.tres" id="35_pkcxg"]
+[ext_resource type="Resource" uid="uid://daiwxhpare6i5" path="res://wfc_tiles/road_turn4.tres" id="36_6rja2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lu85"]
+font_size = 48
+
+[node name="04_wfc_demo" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pt451")
+all_tiles = Array[Resource("res://wfc_tiles/TerrainTile.gd")]([ExtResource("2_0saun"), ExtResource("3_y4f3j"), ExtResource("4_7eggw"), ExtResource("5_ks5hj"), ExtResource("6_hadk5"), ExtResource("7_6buxg"), ExtResource("8_7d5re"), ExtResource("33_nxhgm"), ExtResource("34_cidli"), ExtResource("35_pkcxg"), ExtResource("36_6rja2"), ExtResource("9_7yila"), ExtResource("10_j0qfb"), ExtResource("11_koxu0"), ExtResource("12_nii0y"), ExtResource("13_0l5na"), ExtResource("14_b6ha4"), ExtResource("15_t5hxr"), ExtResource("16_yett2"), ExtResource("17_3r4ia"), ExtResource("18_smk2k"), ExtResource("19_vkg6n"), ExtResource("20_tipd4"), ExtResource("21_pfoie"), ExtResource("22_qdsg0"), ExtResource("26_1mswo"), ExtResource("27_e7hma"), ExtResource("28_3chqe"), ExtResource("29_m61w0"), ExtResource("30_a8eli"), ExtResource("31_sg5vl"), ExtResource("32_bcre6"), ExtResource("23_4naws"), ExtResource("24_8ygnq"), ExtResource("25_ml4lu")])
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Wave Function Collapse - 2D Demo"
+label_settings = SubResource("LabelSettings_1lu85")
+horizontal_alignment = 1
+
+[node name="pad" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="l" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/l"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/l/VBoxContainer"]
+layout_mode = 2
+text = "Tiles"
+horizontal_alignment = 1
+
+[node name="select_grid" type="GridContainer" parent="HBoxContainer/l/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 16
+
+[node name="generate" type="Button" parent="HBoxContainer/l/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Generate"
+
+[node name="step" type="Button" parent="HBoxContainer/l/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Step"
+
+[node name="r" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="cc" type="CenterContainer" parent="HBoxContainer/r"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="tilemap" type="GridContainer" parent="HBoxContainer/r/cc"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+
+[node name="gen_timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="pressed" from="HBoxContainer/l/VBoxContainer/generate" to="." method="_on_generate_pressed"]
+[connection signal="pressed" from="HBoxContainer/l/VBoxContainer/step" to="." method="_on_step_pressed"]
+[connection signal="timeout" from="gen_timer" to="." method="_on_gen_timer_timeout"]

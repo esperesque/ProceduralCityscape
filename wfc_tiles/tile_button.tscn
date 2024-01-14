@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbolpfrts5m7f"]
+
+[ext_resource type="Shader" path="res://shaders/buttonShader.gdshader" id="1_iay8u"]
+[ext_resource type="Texture2D" uid="uid://cy74pv0w20t0x" path="res://wfc_tiles/road_inter.png" id="2_e6ig1"]
+[ext_resource type="Script" path="res://wfc_tiles/tile_button.gd" id="3_u181o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abbts"]
+resource_local_to_scene = true
+shader = ExtResource("1_iay8u")
+shader_parameter/HIGHLIGHT = 0.0
+
+[node name="tile_button" type="TextureButton"]
+material = SubResource("ShaderMaterial_abbts")
+toggle_mode = true
+texture_normal = ExtResource("2_e6ig1")
+script = ExtResource("3_u181o")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

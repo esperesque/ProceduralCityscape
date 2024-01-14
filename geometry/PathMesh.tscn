@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://barhcyxia3xes"]
+
+[ext_resource type="Script" path="res://geometry/PathMesh.gd" id="1_kblxw"]
+
+[node name="PathMesh" type="MeshInstance3D"]
+script = ExtResource("1_kblxw")

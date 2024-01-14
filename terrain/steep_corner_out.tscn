@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://beeim4558wb8x"]
+
+[ext_resource type="Script" path="res://terrain/steep_corner_out.gd" id="1_r6ssy"]
+
+[node name="steep_corner_out" type="Node3D"]
+script = ExtResource("1_r6ssy")
+px_socket = "L_fullramp|R_fullramp"
+nx_socket = "plain_bot|plain_bot"
+py_socket = "out_corner|out_corner|cy"
+ny_socket = "ground|ground"
+pz_socket = "R_fullramp|L_fullramp"
+nz_socket = "plain_bot|plain_bot"

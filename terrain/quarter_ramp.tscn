@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkl81vd8skmib"]
+
+[ext_resource type="Script" path="res://terrain/quarter_ramp.gd" id="1_tdtpb"]
+
+[node name="quarter_ramp" type="Node3D"]
+script = ExtResource("1_tdtpb")
+px_socket = "plain_mid|plain_mid"
+nx_socket = "air|air"
+py_socket = "air|air"
+ny_socket = "ramp|ramp|cy"
+pz_socket = "R_quarter_ramp|L_quarter_ramp"
+nz_socket = "L_quarter_ramp|R_quarter_ramp"

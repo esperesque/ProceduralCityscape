@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg4g4ym8kghki"]
+
+[ext_resource type="Script" path="res://terrain/ramp_low.gd" id="1_quijt"]
+
+[node name="ramp_low" type="Node3D"]
+script = ExtResource("1_quijt")
+px_socket = "plain_mid"
+nx_socket = "plain_bot"
+py_socket = "air"
+ny_socket = "ground"
+pz_socket = "R_ramp_low"
+nz_socket = "L_ramp_low"

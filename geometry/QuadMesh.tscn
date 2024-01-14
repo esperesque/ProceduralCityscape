@@ -1,0 +1,13 @@
+[gd_scene load_steps=6 format=3 uid="uid://df58kkw3s2oe3"]
+
+[ext_resource type="Script" path="res://geometry/QuadMesh.gd" id="1_5uinf"]
+[ext_resource type="Material" uid="uid://c757q5yiurcaj" path="res://material/house_beige.tres" id="2_1rax1"]
+[ext_resource type="Material" uid="uid://blqafb5gqciqj" path="res://material/house_blue.tres" id="3_0wus0"]
+[ext_resource type="Material" uid="uid://cl8bt3esuxqim" path="res://material/house_red.tres" id="4_sao2g"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0vwga"]
+
+[node name="QuadMesh" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_0vwga")
+script = ExtResource("1_5uinf")
+materials = Array[Material]([ExtResource("2_1rax1"), ExtResource("3_0wus0"), ExtResource("4_sao2g")])

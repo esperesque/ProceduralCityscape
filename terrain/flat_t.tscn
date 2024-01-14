@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqii8vhsg7mhy"]
+
+[ext_resource type="Script" path="res://terrain/flat_t.gd" id="1_oy7rk"]
+
+[node name="flat_t" type="Node3D"]
+script = ExtResource("1_oy7rk")
+px_socket = "road_mid|road_mid"
+nx_socket = "plain_mid|plain_mid"
+py_socket = "air|air"
+ny_socket = "ground|ground"
+pz_socket = "road_mid|road_mid"
+nz_socket = "road_mid|road_mid"

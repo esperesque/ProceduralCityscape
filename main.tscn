@@ -1,0 +1,94 @@
+[gd_scene load_steps=15 format=3 uid="uid://3knmc6hkc133"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_yetit"]
+[ext_resource type="PackedScene" uid="uid://buxwo7blxu87x" path="res://slides/02_intro.tscn" id="2_5v7vp"]
+[ext_resource type="PackedScene" uid="uid://c77f66x7fkqkc" path="res://zawarudo.tscn" id="2_8aadd"]
+[ext_resource type="PackedScene" uid="uid://cs4jy0sb736ub" path="res://slides/01_instructions.tscn" id="2_d38eo"]
+[ext_resource type="PackedScene" uid="uid://ckdku4jeuairk" path="res://slides/05_buildtest.tscn" id="3_br4cl"]
+[ext_resource type="PackedScene" uid="uid://bkj5xvl7d1015" path="res://slides/07_wfc_demo.tscn" id="4_in3uq"]
+[ext_resource type="PackedScene" uid="uid://ce8t3jo0un4iy" path="res://slides/03_implementation.tscn" id="4_qhueh"]
+[ext_resource type="PackedScene" uid="uid://ddq7ajdpjpwlo" path="res://slides/08_wfc_eval.tscn" id="5_4tpee"]
+[ext_resource type="PackedScene" uid="uid://cpev7o70rb733" path="res://slides/04_buildings.tscn" id="5_8wwx3"]
+[ext_resource type="PackedScene" uid="uid://bf8m75o32bljx" path="res://slides/10_final.tscn" id="5_x2lyn"]
+[ext_resource type="PackedScene" uid="uid://cy0wcj783h75c" path="res://slides/09_godot.tscn" id="6_hfaxo"]
+[ext_resource type="PackedScene" uid="uid://crpc2xabp38de" path="res://slides/06_wfc_intro.tscn" id="7_l1wjc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqe64"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8ij2"]
+bg_color = Color(0.0627451, 0.12549, 0.25098, 1)
+
+[node name="main" type="Node"]
+script = ExtResource("1_yetit")
+slides = Array[PackedScene]([ExtResource("2_d38eo"), ExtResource("2_5v7vp"), ExtResource("4_qhueh"), ExtResource("5_8wwx3"), ExtResource("3_br4cl"), ExtResource("7_l1wjc"), ExtResource("4_in3uq"), ExtResource("5_4tpee"), ExtResource("6_hfaxo"), ExtResource("5_x2lyn")])
+
+[node name="zawarudo" parent="." instance=ExtResource("2_8aadd")]
+
+[node name="slideshow" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="slideshow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.0156863, 0.0627451, 1)
+
+[node name="mc" type="MarginContainer" parent="slideshow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="vbox" type="VBoxContainer" parent="slideshow/mc"]
+layout_mode = 2
+
+[node name="hbox" type="HBoxContainer" parent="slideshow/mc/vbox"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+alignment = 2
+
+[node name="lang_select" type="OptionButton" parent="slideshow/mc/vbox/hbox"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "EN"
+popup/item_0/id = 0
+popup/item_1/text = "SE"
+popup/item_1/id = 1
+
+[node name="slide_container" type="Control" parent="slideshow/mc/vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="slide_progress" type="ProgressBar" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_bqe64")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a8ij2")
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[connection signal="item_selected" from="slideshow/mc/vbox/hbox/lang_select" to="." method="_on_lang_select_item_selected"]

@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c757q5yiurcaj"]
+
+[ext_resource type="Shader" path="res://shaders/buildingShader.gdshader" id="1_7tau3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pxsm1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tu5qd"]
+seamless = true
+noise = SubResource("FastNoiseLite_pxsm1")
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_7tau3")
+shader_parameter/base_color = Vector3(0.7, 0.7, 0.5)
+shader_parameter/dark_color = Vector3(0.6, 0.6, 0.42)
+shader_parameter/noise = SubResource("NoiseTexture2D_tu5qd")

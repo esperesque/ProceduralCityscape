@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq61fibdlfhvc"]
+
+[ext_resource type="Script" path="res://terrain/flat_intersection.gd" id="1_ws28r"]
+
+[node name="flat_intersection" type="Node3D"]
+script = ExtResource("1_ws28r")
+px_socket = "road_mid|road_mid"
+nx_socket = "road_mid|road_mid"
+py_socket = "air|air"
+ny_socket = "ground|ground"
+pz_socket = "road_mid|road_mid"
+nz_socket = "road_mid|road_mid"

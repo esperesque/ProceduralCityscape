@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr5r0xhncdgww"]
+
+[ext_resource type="Script" path="res://terrain/ravine.gd" id="1_1081j"]
+
+[node name="ravine" type="Node3D"]
+script = ExtResource("1_1081j")
+px_socket = "plain_mid|plain_mid"
+nx_socket = "plain_mid|plain_mid"
+py_socket = "air|air"
+ny_socket = "ravine|ravine"
+pz_socket = "ravine_mid|ravine_mid"
+nz_socket = "ravine_mid|ravine_mid"
